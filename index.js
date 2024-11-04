@@ -9,11 +9,11 @@ clickButton.addEventListener('click', () => {
         getResult.textContent="INVALID NUMBER";
     } else {
         let calculate = textInput * 2.54;
-        getResult.textContent = `${calculate.toFixed(0)} CM`;  
+        getResult.textContent = ` ${calculate.toFixed(0)} INCHES `;  
     }
 });
 
 resetButton.addEventListener('click', () => {
-    document.getElementById('textInput').value = 0;
-    getResult.textContent = `0 CM`;
+    document.getElementById('textInput').value = "";
+    getResult.textContent = `0 INCHES`;
 });

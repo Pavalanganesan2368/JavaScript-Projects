@@ -76,10 +76,12 @@ body {
     font-size: 1.3rem;
 }
 .displayResult {
-    width: 100vw;
-    height: 200px;
+    width: 500px;
+    height: 100px;
     display: flex;
-    color: #fff;
+    font-size: 1rem;
+    padding: 0 20px;
+    color: var(--colorLetter);
     justify-content: center;
     align-items: center;
 }
