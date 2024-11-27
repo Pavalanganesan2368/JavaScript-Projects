@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cambria,'times new roman';
+}
+
+:root {
+    --backGroundColor: #ffe795;
+    --colorLetter: #060051;
+    --boxColor: #daaa00;
+    --colorBorder: #00d;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--backGroundColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 350px;
+    height: 500px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-color: var(--boxColor);
+    align-items: center;
+    border: 2px solid #000000;
+    border-radius: 15px;   
+}
+
+.container h1 {
+    margin: 15px 0;
+    padding: 0 10px;
+    color: var(--colorLetter);  
+    font-size: 1.8rem;
+}
+
+.container input[type=text] {
+    width: 20rem;
+    padding: 10px;
+    font: inherit;
+    font-size: 2rem;    
+    border-radius: 10px;
+    border: none;
+    outline: 2px solid var(--colorLetter);
+}
+
+.containerBox {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.containerButton {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.containerButton input[type=button] {
+    padding: 25px;
+    color:#fff;
+    border: none;
+    border-radius: 20px;
+    outline: 2px solid var(--colorLetter);
+    background-color: var(--colorLetter);
+    margin-top: 50px;
+    font-size: 1.3rem;
+}
+.displayResult {
+    width: 500px;
+    height: 100px;
+    display: flex;
+    font-size: 1rem;
+    padding: 0 20px;
+    color: var(--colorLetter);
+    justify-content: center;
+    align-items: center;
+}
