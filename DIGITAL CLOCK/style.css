@@ -1,0 +1,44 @@
+* {
+  margin: 0 ;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(image.jpeg);
+  background-color: #000;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .container-clock {
+  height: 80px;
+  padding: 20px;
+  outline: 3px solid #0f0;
+  color: #fff;
+  background: rgba(0, 255, 0, 0.7);
+  border-radius: 20px;
+  box-shadow: 2px 2px 15px #0b0;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+@media all and (min-width: 920px) {
+  .container .container-clock {
+    height: auto;
+    font-size: 2rem;
+    padding: 20px;
+  }
+}
