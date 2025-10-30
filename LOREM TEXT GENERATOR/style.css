@@ -1,0 +1,75 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+:root {
+    --backgroundColor : #b4e0d2;
+    --headingText : #083a69;
+    --textColor : #3b6199;
+}
+
+body {
+    background-color: var(--backgroundColor);
+    color: var(--headingText);
+    text-align: center;
+}
+
+.main-container {
+    max-width: 900px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.main-container .heading-section h2 {
+    letter-spacing: 3px;
+}
+
+.main-container .input-section {
+    margin: 2rem 0;
+    color: var(--textColor);
+    font-size: 1.2rem;
+}
+
+.main-container .input-section input {
+    padding: 0.2rem 0.5rem;
+    outline: none;
+    border-radius: 2px;
+    border: none;
+    margin: 0 1.2rem;
+    font: inherit;
+}
+
+.main-container .paragraph-section #display-para {
+    max-width: 100%;
+    font-size: 1rem;
+    overflow-y: scroll;
+    max-height: 250px;
+}
+
+.main-container .input-section button {
+    padding: 0.2rem 2rem;
+    background-color: var(--headingText);
+    border: none;
+    outline: none;
+    color: #fff;
+    font: inherit;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.main-container .input-section input::-webkit-inner-spin-button,
+.main-container .input-section input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.main-container .input-section button:hover {
+    background-color: #3b6199;
+}
