@@ -1,0 +1,300 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+* {
+     margin: 0;
+     padding: 0;
+     border: none;
+     outline: none;
+     box-sizing: border-box;
+     font-family: "Poppins", sans-serif;
+     text-decoration: none;
+}
+
+:root {
+  --primary-color: #a78bfa;
+  --primary-dark: #8b5cf6;
+  --primary-light: #c4b5fd;
+  --primary-gradient: linear-gradient(135deg, #a78bfa, #8b5cf6);
+  --bg-dark: #1a1a1a;
+  --text-light: #f3f4f6;
+  --text-gray: #9ca3af;
+  --card-bg: #252525;
+  --card-hover: #2e2e2e;
+  --border-radius: 12px;
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 20px 25px rgba(0, 0, 0, 0.15);
+  --border-light: rgba(255, 255, 255, 0.05);
+  --bg-overlay: rgba(255, 255, 255, 0.1);
+  --text-dark: #000;
+  --shadow-color-primary: rgba(139, 92, 246, 0.3);
+  --shadow-color-primary-hover: rgba(139, 92, 246, 0.4);
+}
+
+.container {
+     width: 100%;
+     max-width: 1200px;
+     margin: 0 auto;
+}
+
+body {
+     background-color: var(--bg-dark);
+     color: var(--text-light);
+     min-height: 100vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 50px 15px;
+}
+
+header {
+     text-align: center;
+     margin-bottom: 60px;
+}
+
+header h1 {
+     font-size: 2.7rem;
+     margin-bottom: 20px;
+     background: linear-gradient(to right, var(--primary-dark), var(--primary-color));
+     display: inline-block;
+     background-clip: text;
+     -webkit-background-clip: text;
+     color: transparent;
+     position: relative;
+}
+
+header h1::after {
+     content: "";
+     position: absolute;
+     height: 5px;
+     width: 50%;
+     transform: translateX(50%);
+     bottom: 0;
+     left: 0;
+     background-color: #8b5cf6;
+     border-radius: 5px;
+}
+
+header p {
+     color: var(--text-gray);
+     font-size: 1.1rem;
+     max-width: 600px;
+     margin: 0 auto;
+     margin-top: 20px;
+}
+
+.team-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+     gap: 30px;
+     margin-bottom: 60px;
+     box-shadow: var(--shadow-md);
+}
+
+.team-card {
+     background-color: var(--card-bg);
+     border-radius: var(--border-radius);
+     overflow: hidden;
+     transition: all 0.3s ease;
+     box-shadow: var(--shadow-md);
+     height: 100%;
+     position: relative;
+     display: flex;
+     flex-direction: column;
+}
+
+.team-card:hover {
+     transform: translateY(-10px);
+     box-shadow: var(--shadow-lg);
+}
+
+.team-card:hover .profile-bg {
+     transform: scale(1.1);
+}
+
+.card-top {
+     position: relative;
+     padding-top: 70px;
+     padding-bottom: 30px;
+     text-align: center;
+     z-index: 1;
+}
+
+.profile-bg {
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     height: 120px;
+     z-index: -1;
+     background: var(--primary-gradient);
+     transition: transform 0.4s ease;
+}
+
+.profile-img {
+     width: 100px;
+     height: 100px;
+     border-radius: 50%;
+     overflow: hidden;
+     margin: 0 auto 30px;
+     border: 4px solid var(--card-bg);
+}
+
+.profile-img img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     transition: transform 0.3s ease;
+}
+
+.team-card:hover .profile-img img {
+     transform: scale(1.1);
+}
+
+.card-top h3 {
+     font-size: 1.4rem;
+     margin-bottom: 5px;
+     font-weight: 600;
+}
+
+.role {
+     color: var(--primary-color);
+     font-size: 0.95rem;
+     font-weight: 500;
+}
+
+.card-bottom {
+     padding: 20px 25px 25px;
+     flex-grow: 1;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     border-top: 1px solid var(--border-light);
+}
+
+.bio {
+     color: var(--text-gray);
+     font-size: 0.95rem;
+     margin-bottom: 25px;
+     line-height: 1.6;
+     flex-grow: 1;
+}
+
+.social-links {
+     display: flex;
+     gap: 15px;
+     justify-content: center;
+}
+
+.social-icon {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 36px;
+     height: 36px;
+     border-radius: 50%;
+     background-color: var(--bg-overlay);
+     color: var(--text-light);
+     transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+     background-color: var(--primary-color);
+     color: var(--text-dark);
+     transform: translateY(-3px);
+}
+
+.team-cta {
+     text-align: center;
+     margin-top: 30px;
+     padding: 40px;
+     background-color: var(--bg-overlay);
+     border-radius: var(--border-radius);
+     position: relative;
+     overflow: hidden;
+     box-shadow: var(--shadow-md);
+}
+
+.team-cta::before {
+     content: "";
+     position: absolute;
+     top: 0;
+     left: 0;
+     height: 5px;
+     width: 100%;
+     background-color: var(--primary-dark);
+}
+
+.team-cta h2 {
+     font-size: 1.8rem;
+     margin-bottom: 15px;
+     color: var(--primary-light);
+}
+
+.team-cta p {
+     color: var(--text-gray);
+     max-width: 500px;
+     margin: 0 auto 25px;
+}
+
+.cta-button {
+     display: inline-block;
+     padding: 12px 25px;
+     background: var(--primary-gradient);
+     color: var(--text-dark);
+     font-weight: 600;
+     font-size: 1rem;
+     border-radius: 30px;
+     transition: all 0.3s ease-in-out;
+     box-shadow: 0 5px 15px var(--shadow-color-primary);
+}
+
+.cta-button:hover {
+     transform: translateY(-3px);
+     box-shadow: 0 8px 20px var(--shadow-color-primary-hover);
+}
+
+@media screen and (max-width: 768px) {
+     header {
+          margin-bottom: 40px;
+     }
+
+     header h1 {
+          font-size: 2.2rem;
+     }
+
+     .team-grid {
+          gap: 20px;
+     }
+
+     .team-cta {
+          padding: 30px 20px;
+     }
+
+     .team-cta h2 {
+          font-size: 1.5rem;
+     }
+}
+
+@media screen and (max-width: 480px) {
+     body {
+          padding: 30px 15px;
+     }
+
+     header h1 {
+          font-size: 1.9rem;
+     }
+
+     .profile-img {
+          width: 90px;
+          height: 90px;
+     }
+
+     .card-top h3 {
+          font-size: 1.3rem;
+     }
+
+     .team-cta {
+          padding: 25px 15px;
+     }
+}
