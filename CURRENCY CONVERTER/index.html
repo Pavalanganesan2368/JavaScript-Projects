@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet" href="./style.css">
+     <title>Document</title>
+</head>
+<body>
+     <main class="currency-container">
+          <section class="header-section">
+               <h1>Currency Converter</h1>
+          </section>
+
+          <form class="currency-section" id="converter-form">
+               <div class="input-section">
+                    <label for="amount-label">Amount</label>
+                    <input type="number" name="amount-label" id="amount" placeholder="Enter Amount" />
+               </div>
+
+               <div class="input-section">
+                    <label for="amount-from">From</label>
+                    <select name="amount-from" id="from-currency"></select>
+               </div>
+
+               <div class="input-section">
+                    <label for="amount-to">To</label>
+                    <select name="amount-to" id="to-currency"></select>
+               </div>
+
+               <div class="button-section">
+                    <button class="button-convert" type="submit">Convert</button>
+               </div>
+
+               <div class="result-container">
+                    <h3 id="result-section"></h3>
+               </div>
+          </form>
+     </main>
+     <script src="./script.js"></script>
+</body>
+</html>

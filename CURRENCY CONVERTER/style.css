@@ -1,0 +1,130 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+* {
+     margin: 0;
+     padding: 0;
+     border: none;
+     outline: none;
+     text-decoration: none;     
+     box-sizing: border-box;
+     font-family: "Poppins", sans-serif;
+}
+
+:root {
+     --backgroundColor : #051b3f;
+     --boxBackgroundColor : #1b1c20;
+     --color : #ddd;
+     --borderRadius : 16px;
+     --labelColor : #817e7e;
+     --labelBackgroundColor : #3a3a3a;
+     --buttonBackgroundColor : #3e76cf;
+     --hoverBackgroundColor : #0965ce;
+     --boxShadow : 0 0 15px #000;
+    
+}
+
+body {
+     width: 100%;
+     min-height: 100vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background-color: var(--backgroundColor);
+}
+
+.currency-container {
+     max-width: 400px;
+     max-height: 600px;
+     box-shadow: var(--boxShadow);
+     background-color: var(--boxBackgroundColor);
+     border-radius: var(--borderRadius);
+     padding: 1.5rem 1.3rem;
+}
+
+.currency-container .header-section {
+     margin-bottom: 0.8rem;
+}
+
+.currency-container .header-section h1 {
+     text-align: center;
+     color: var(--color);
+     font-size: 2.1rem;
+     font-weight: 700;
+}
+
+.currency-container .currency-section {
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+}
+
+.currency-container .currency-section 
+.input-section label {
+     display: block;
+     font-size: 1.1rem;
+     margin: 15px 0;
+     font-weight: 200;
+     color: var(--labelColor);
+}
+
+.currency-container .currency-section 
+.input-section input[type="number"] {
+     width: 100%;
+     padding: 1rem 1.15rem;
+     font-size: 0.9rem;
+     font-weight: 500;
+     color: var(--color);
+     border-radius: 5px;
+     background-color: var(--labelBackgroundColor);
+}
+
+.currency-container .currency-section 
+.input-section input[type="number"]::placeholder {
+     color: var(--labelColor);
+}
+
+.currency-container .currency-section 
+.input-section select[name^="amount"] {
+     width: 100%;
+     padding: 1rem 1.15rem;
+     font-size: 0.9rem;
+     font-weight: 500;
+     color: var(--color);
+     border-radius: 5px;
+     background-color: var(--labelBackgroundColor);
+}
+
+.currency-container .currency-section .button-section {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin: 17px 0;
+
+}
+
+.currency-container .currency-section .button-section button {
+     padding: 1rem 1.15rem;
+     width: 100%;
+     border-radius: 5px;
+     font-weight: 600;
+     font-size: 0.9rem;
+     color: var(--color);
+     background-color: var(--buttonBackgroundColor);
+     cursor: pointer;
+}
+
+.currency-container .currency-section .result-container {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin-top: 12px;
+}
+
+.currency-container .currency-section .result-container h3 {
+     color: var(--color);
+}
+
+.currency-container .currency-section .button-section button:hover {
+     background-color: var(--hoverBackgroundColor);
+     transition: background-color 0.5s ease;
+}
