@@ -1,0 +1,90 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #e3f2fd;
+}
+
+.wrapper {
+    width: 65vmin;
+    height: 70vmin;
+    background: #293447;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.game-details {
+    color: #BBC6DC;
+    font-size : 1.2rem;
+    font-weight: 500;
+    padding: 20px 27px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.play-board {
+    width: 100%;
+    height: 100%;
+    background: #212837;
+    display: grid;
+    grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 2px;
+    padding: 2px 0;
+}
+
+.controls i {
+    padding: 17px 0;
+    color: #bbc6dc;
+    width: calc(100% / 4);
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.3rem;
+    border-radius: 1px solid #171c2a;
+    background-color: #212837;
+}
+
+.play-board .food {
+    background-color: #FF003D;
+}
+
+.play-board .head {
+    background-color: #60cbfd
+}
+
+@media screen and (max-width : 880px) {
+    .wrapper {
+        width: 90vmin;
+        height : 100vmin;
+    }
+
+    .game-details {
+        font-size: 1rem;
+        padding: 15px 27px;
+    }
+
+    .controls {
+        display: flex;
+    }
+
+    .controls i {
+        padding: 15px 0;
+        font-size: 1rem;
+    }
+}
