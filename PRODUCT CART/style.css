@@ -79,6 +79,11 @@ body {
     font-weight: 500;
 }
 
+.product-list {
+    cursor: pointer;
+    font-weight: 600;
+}
+
 .product-btn .add-btn {
     width: 100%;
     padding: 0.3rem;
@@ -127,6 +132,17 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.item-status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+}
+
+.item-status-disabled {
+    display: flex;
 }
 
 .close-btn {

@@ -5,6 +5,7 @@ const productCards = document.querySelectorAll(".product-cards");
 const productsItems = document.querySelector("#display-sideBar");
 const productsSideContainer = document.querySelector(".sidepanel-container");
 const totalPrice = document.querySelector("#total-price");
+const itemStatus = document.querySelector(".item-status");
 
 const addProductItems = JSON.parse(localStorage.getItem("Product_Cart")) || [];
 
@@ -60,37 +61,38 @@ function addToCartFunction(
 
     addProductItems.push(productCards);
     localStorage.setItem("Product_Cart", JSON.stringify(addProductItems));
-    productSidePanel(productCards);
+    renderCart();
     alert("Product Added Successfully!");
   });
-
+  
   renderCart();
+  productSidePanel(productCards);
 }
 
 function productSidePanel(product) {
   const productSideCard = `
-          <div class="sidepanel-box" data-id=${product.id}>
-            <div class="sidepanel-section">
+  <div class="sidepanel-box" data-id=${product.id}>
+  <div class="sidepanel-section">
               <img
-                src="${product.productUrl}"
-                alt="${product.productAlt}"
+              src="${product.productUrl}"
+              alt="${product.productAlt}"
                 width="80"
                 height="80"
-              />
-            </div>
+                />
+                </div>
+                
+                <div class="sidepanel-title">
+                <h3>${product.productName}</h3>
+                </div>
 
-            <div class="sidepanel-title">
-              <h3>${product.productName}</h3>
-            </div>
-
-            <div class="sidepanel-price">
-              <h3>₹${Number(product.productPrice)}.00</h3>
+                <div class="sidepanel-price">
+                <h3>₹${Number(product.productPrice)}.00</h3>
             </div>
 
             <div class="delete-btn">
-                <i class="fa-solid fa-trash-alt" onclick="deleteProductItem(${product.id})"></i>
+            <i class="fa-solid fa-trash-alt" onclick="deleteProductItem(${product.id})"></i>
             </div>
-          </div>`;
+            </div>`;
 
   productsSideContainer.innerHTML += productSideCard;
   productsItems.innerHTML = `${addProductItems.length} Items`;
@@ -120,12 +122,24 @@ function deleteProductItem(id) {
 function renderCart() {
   productsSideContainer.innerHTML = "";
 
-  addProductItems.forEach((product) => {
-    productSidePanel(product);
-  });
+  if (addProductItems.length === 0) {
+    productNotFoundFunction();
+  } else {
+    addProductItems.forEach((product) => {
+      productSidePanel(product);
+    });
+  }
 
   productsItems.innerHTML = `${addProductItems.length} Items`;
   addPriceTotal(addProductItems);
+}
+
+function productNotFoundFunction() {
+  productsSideContainer.innerHTML = `
+    <div class="item-status">
+      <p style="color: #fff;">Items Not Found.</p>
+    </div>
+  `;
 }
 
 addToggleFunction();

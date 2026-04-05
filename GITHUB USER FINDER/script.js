@@ -45,9 +45,6 @@ async function searchUser() {
 
           const userData = await response.json();
 
-          console.log(userData);
-          
-
           displayUserData(userData);
           fetchRepositories(userData.repos_url);
 
