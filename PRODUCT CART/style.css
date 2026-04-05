@@ -1,0 +1,190 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family: "Poppins", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+:root {
+    --textColor : #fff;
+    --backgroundColor : #e82052;
+    --hoverBackgroundColor : #e82052;
+    --btnBackgroundColor : #d4476a;
+}
+
+body {
+    width: 100%;
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    min-height: 100vh;
+    background-color: #f8f5f5;
+    position: relative;
+    z-index: 1;
+}
+
+.header-container {
+    position: sticky;
+    width: 100%;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 0 1.1rem;
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
+}
+
+.products-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+    gap: 1rem;
+    padding: 0.5rem 0.9rem;
+}
+
+.product-cards {
+    display: grid;
+    grid-template-columns: subgrid;
+    border-radius: 5px;
+    grid-row: span 3;
+    min-width: 100%;
+    height: 100%;
+    border: 2px solid #7d7c7c;
+    box-shadow: 0 0 10px #333;
+    padding: 1rem;
+}
+
+.image-section {
+    min-height: 300px;
+}
+
+.image-section img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.price-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 0 0.10rem;
+    font-weight: 500;
+}
+
+.product-btn .add-btn {
+    width: 100%;
+    padding: 0.3rem;
+    font-weight: 600;
+    border: none;
+    background-color: var(--btnBackgroundColor);
+    color: var(--textColor);
+    transition: background-color 0.1s linear;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.product-btn .add-btn:hover {
+    background-color: var(--hoverBackgroundColor);
+}
+
+.sidepanel-product {
+    position: fixed;
+    width: 100%;
+    max-width: 550px;
+    top: 0;
+    right: 0; 
+    z-index: 1000;
+    width: 550px;
+    height: 100%;
+    background-color: #3b3636;
+    overflow-y: scroll;
+    max-height: 900px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+
+.sidepanel-product.sidepanel-product-toggle {
+    transform: translateX(0);
+}
+
+.sidebar-heading {
+    position: sticky;
+    top: 0;
+    text-align: center;
+    padding: 0.8rem 0.7rem;
+    color: var(--textColor);
+    border-bottom: 1px solid #aaa;
+    background-color: #3b3636;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-btn {
+    padding: 0.6rem;
+    color: var(--textColor);
+    background-color: transparent;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.sidepanel-box {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 10px;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #aaa;
+    color: var(--textColor);
+}
+
+.delete-btn i {
+    color: rgb(241, 46, 46);
+    font-size: 1.5rem;
+    transition: color 0.2s linear;
+    cursor: pointer;
+}
+
+.delete-btn i:hover {
+    color: #f00;
+}
+
+.sidebar-total-price {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    color: var(--textColor);
+    position: sticky;
+    bottom: 0;
+    background-color: #3b3636;
+}
+
+@media screen and (max-width: 768px) {
+    .sidepanel-product {
+        max-width: 100%;
+    }
+
+    .sidebar-heading {
+        font-size: 14px;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    .sidepanel-box {
+        grid-template-columns: 60px 1fr auto auto;
+        font-size: 14px;
+    }
+}
